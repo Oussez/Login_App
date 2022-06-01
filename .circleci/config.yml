@@ -42,4 +42,14 @@ installingservices: #title of 2rd section
       - run:
           name: Run Unit tests
           command: vendor/bin/phpunit
+      
+      - sonarcloud/scan #Launch SonarCloud scanner
+    orbs:
+     sonarcloud: sonarsource/sonarcloud@1.0.3
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
  
