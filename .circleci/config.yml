@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  browser-tools: circleci/browser-tools@1.2
 
 jobs: # a collection of steps
   build: #title of 1rd section: runs not using Workflows must have a `build` job as entry point
@@ -44,7 +42,7 @@ installingservices: #title of 2rd section
           command: vendor/bin/phpunit
       
       - sonarcloud/scan #Launch SonarCloud scanner
-orbs:
+    orbs:
      sonarcloud: sonarsource/sonarcloud@1.0.3
 
 workflows:
