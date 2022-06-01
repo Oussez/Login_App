@@ -1,20 +1,23 @@
-version: 2
-jobs:
-  build:
-    working_directory: /var/www/html
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.2
+
+jobs: # a collection of steps
+  build: # runs not using Workflows must have a `build` job as entry point
+    working_directory: ~/circleci-php # Here where the docker image and other files will be installed
     docker:
       - image: php:7.1-apache
         environment:
           APP_ENV: test
-    steps:
+    steps: # list of commands 
+      - checkout # special step to check out source code to working directory
       - run:
           name: Install system packages
           command: apt-get update && apt-get -y install git
-      - run:
+	  - run:
           name: Install PHP extensions
           command: docker-php-ext-install pdo
-      - checkout
-      - run:
+	  - run:
           name: Install Composer
           command: |
             php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -29,9 +32,7 @@ jobs:
       - run:
           name: Install project dependencies
           command: php composer.phar install
-      - run:
-          name: Run CS tests
-          command: vendor/bin/phpcs
-      - run:
+	  - run:
           name: Run Unit tests
           command: vendor/bin/phpunit
+ 
