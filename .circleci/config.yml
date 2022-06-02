@@ -9,13 +9,12 @@ jobs: # a collection of steps
     steps: # list of commands 
       - checkout # special step to check out source code to working directory
       - sonarcloud/scan
+      - run: |
+            apt-get update -y
+            apt-get upgrade -y 
+            apt-get install unzip 
 installingservices: #title of 2rd section
     steps: #installing some required services below
-      - run: 
-          name: Install unzip command to use sonarcloud orbs
-          command: |
-            sudo apt-get update 
-            sudo apt-get install zip unzip
       - run:
           name: Install system packages
           command: apt-get update && apt-get -y install git
