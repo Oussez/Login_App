@@ -1,12 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase;
-<<<<<<< HEAD
 
 require 'vendor/autoload.php';
 
-=======
-require 'vendor/autoload.php';
->>>>>>> 862336e33de4e2a8f1dabcc26caed20bee89c673
 class Maintest extends TestCase { 
      
     public function test() 
