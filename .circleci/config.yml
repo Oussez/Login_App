@@ -15,8 +15,6 @@ jobs: # a collection of steps
             apt-get upgrade -y 
             apt-get install unzip
       - sonarcloud/scan
-installing_services: #title of 2rd section
-    steps: #installing some required services below
       - run:
           name: Install system packages
           command: apt-get -y install git
