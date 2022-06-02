@@ -14,6 +14,7 @@ jobs: # a collection of steps
             apt-get update -y
             apt-get upgrade -y 
             apt-get install unzip
+            apt install sudo
       - sonarcloud/scan
       - run:
           name: Install system packages
