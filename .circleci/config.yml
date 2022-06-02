@@ -1,5 +1,6 @@
 version: 2.1
-
+orbs: 
+  sonarcloud: sonarsource/sonarcloud@1.1.0
 jobs: # a collection of steps
   build: #title of 1rd section: runs not using Workflows must have a `build` job as entry point
     working_directory: ~/circleci-php # Here where the docker image and other files will be installed
@@ -9,6 +10,7 @@ jobs: # a collection of steps
           APP_ENV: test
     steps: # list of commands 
       - checkout # special step to check out source code to working directory
+      - sonarcloud/scan
 installingservices: #title of 2rd section
     steps: #installing some required services below
       - run:
@@ -40,6 +42,8 @@ installingservices: #title of 2rd section
       - run:
           name: Run Unit tests
           command: vendor/bin/phpunit
-      
-      
- 
+workflows:
+  main:
+    jobs:
+      - build:
+          context: sonarcloud    
