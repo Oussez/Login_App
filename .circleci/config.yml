@@ -24,10 +24,10 @@ jobs: # a collection of steps
       - run:
           name: Checking the version of php + it's source folder
           command: |
-            echo "version of php stands for :\n"
+            echo "==============version of php stands for :"
             php -v
-            echo "source folder: \n"
-            find / -name php
+            echo "==============source folder: "
+            sudo su find / -name mods-available
       - run:
           name: Install Composer
           command: |
