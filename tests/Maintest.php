@@ -1,8 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-
 require 'vendor/autoload.php';
-
 class Maintest extends TestCase { 
      
     public function test() 
