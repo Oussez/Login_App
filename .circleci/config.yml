@@ -28,7 +28,6 @@ jobs: # a collection of steps
             echo "==============version of php stands for :"
             php -v
             echo "==============source folder: "
-            sudo find / -name mods-available
             find . -path ./proc -prune -o -name 'mods-available' -print
       - run:
           name: Install Composer
