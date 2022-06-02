@@ -1,6 +1,6 @@
 version: 2.1
 orbs: 
-  sonarcloud: sonarsource/sonarcloud@1.1.0
+  sonarcloud: sonarsource/sonarcloud@1.0.3
 jobs: # a collection of steps
   build: #title of 1rd section: runs not using Workflows must have a `build` job as entry point
     working_directory: ~/circleci-php # Here where the docker image and other files will be installed
@@ -37,8 +37,8 @@ installingservices: #title of 2rd section
       - run:
           name: Install project dependencies
           command: php composer.phar install
-    unitest: #title of 3rd section
-      steps: # launch unit test
+unitest: #title of 3rd section
+    steps: # launch unit test
       - run:
           name: Run Unit tests
           command: vendor/bin/phpunit
