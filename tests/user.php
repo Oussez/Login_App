@@ -18,7 +18,7 @@ class User {
 
   }
 
-  $userOne = new User('mario', 'mario@thenetninja.co.uk');
+  $userOne = new User('Oussez', 'mario@thenetninja.co.uk');
 
   echo $userOne->addFriend();
 
