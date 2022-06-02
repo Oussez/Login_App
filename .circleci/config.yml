@@ -1,7 +1,4 @@
 version: 2.1
-orbs:
-  orb-tools: circleci/orb-tools@8.27.4
-  sonarcloud: sonarsource/sonarcloud@dev:alpha
 jobs: # a collection of steps
   build: #title of 1rd section: runs not using Workflows must have a `build` job as entry point
     working_directory: ~/circleci-php # Here where the docker image and other files will be installed
@@ -43,23 +40,11 @@ unitest: #title of 3rd section
       - run:
           name: Run Unit tests
           command: vendor/bin/phpunit
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.3
+
 workflows:
-  publish-dev:
+  main:
     jobs:
-      - orb-tools/pack:
-          source-dir: src/main
-          destination-orb-path: orb.yml
-          workspace-path: orb.yml
-          artifact-path: orb.yml
-      - orb-tools/publish-dev:
-          name: publish-dev
-          context: Publishing Orb
-          orb-name: sonarsource/sonarcloud
-          requires: [orb-tools/pack]
-      - orb-tools/publish:
-          context: Publishing Orb
-          orb-ref: sonarsource/sonarcloud@1.1.0
-          attach-workspace: true
-          filters:
-            branches:
-              only: main
+      - build:
+          context: SonarCloud
