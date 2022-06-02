@@ -1,0 +1,47 @@
+<phpunit 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+			bootstrap="vendor/autoload.php"
+			colors="true">
+
+   <testsuites>
+        <testsuite name="Test Unit Assertion 1">
+            <directory>./tests</directory>  <!-- içi on met le chemin de ou des fichiers class test -->
+			<file>./tests/Maintest.php</file>
+        </testsuite>
+		
+		<!-- <testsuite name="Test Unit Assertion 2">
+            <directory>./tests</directory>   //içi on met le chemin de ou des fichiers class test 
+			<file>./tests/tests_b.php</file>
+        </testsuite>  --> 
+    </testsuites>
+    
+    <coverage processUncoveredFiles="true">
+		<include>
+			<directory suffix=".php">./tests</directory>
+		</include>
+   </coverage>
+   
+   <filter>
+		<whitelist processUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">./tests</directory>
+             <file>./tests/tests_a.php</file>
+			 <!-- <file>./tests/tests_b.php</file>  -->
+	  </whitelist>
+	</filter>
+	
+	
+	<!-- <filter>
+    <whitelist addUncoveredFilesFromWhitelist="true">
+        <directory suffix=".php">lib/</directory>
+    </whitelist>
+</filter> -->  
+	
+   
+   <!--<logging>
+    <log type="coverage-clover" target="coverage-report.xml"/>
+    <log type="junit" target="tests-report.xml"/> 
+</logging>-->
+
+</phpunit>                  
+
+

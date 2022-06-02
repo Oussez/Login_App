@@ -1,0 +1,12 @@
+{
+	"autoload-dev": { 
+	   "psr-4": { 
+			"Page_login\\tests\\": "tests/" 
+		},
+"classmap": [ 
+		"tests/",
+		"bin/.phpunit/phpunit/src",
+		] 
+	}
+}
+
