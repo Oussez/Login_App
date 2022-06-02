@@ -3,7 +3,7 @@ jobs: # a collection of steps
   build: #title of 1rd section: runs not using Workflows must have a `build` job as entry point
     working_directory: ~/circleci-php # Here where the docker image and other files will be installed
     docker:
-      - image: php:7.3-apache
+      - image: php:7.4-apache
         environment:
           APP_ENV: test
     steps: # list of commands 
@@ -40,7 +40,7 @@ jobs: # a collection of steps
      #Test unit command
       - run:
           name: Run Unit tests
-          command: php vendor\bin\phpunit --log-junit test-report.xml --coverage-clover coverage-report.xml --color
+          command: php vendor/bin/phpunit --log-junit test-report.xml --coverage-clover coverage-report.xml --color
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
 
