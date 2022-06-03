@@ -24,7 +24,7 @@
    <filter>
 		<whitelist processUncoveredFilesFromWhitelist="true">
 			<directory suffix=".php">./tests</directory>
-             <file>./tests/tests_a.php</file>
+             <file>./tests/Maintest.php</file>
 			 <!-- <file>./tests/tests_b.php</file>  -->
 	  </whitelist>
 	</filter>

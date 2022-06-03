@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.017707">
-    <testsuite name="Test Unit Assertion 1" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.017707">
-      <testsuite name="Maintest" file="O:\xampp\htdocs\Jmeter_\Page_login\tests\Maintest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.017707">
-        <testcase name="test" class="Maintest" classname="Maintest" file="O:\xampp\htdocs\Jmeter_\Page_login\tests\Maintest.php" line="6" assertions="2" time="0.017707">
+  <testsuite name="" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.007656">
+    <testsuite name="Test Unit Assertion 1" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.007656">
+      <testsuite name="Maintest" file="O:\xampp\htdocs\Jmeter_\Page_login\tests\Maintest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.007656">
+        <testcase name="test" class="Maintest" classname="Maintest" file="O:\xampp\htdocs\Jmeter_\Page_login\tests\Maintest.php" line="6" assertions="2" time="0.007656">
           <system-out>
 new product has been created: namme :P1 | QT: 5
 
