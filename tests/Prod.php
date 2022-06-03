@@ -21,7 +21,7 @@ class Prod {
             }
         
                 $this->qt = $this->qt+$QT;
-                echo "\n->the quantiy of the prd has been increased to [ ".$this->qt." ] | ".$QT." - ".$this->name."\n";
+                echo "\n->the quantiy of the prd has been increased to [ ".$this->qt." ] | Quantity added: ".$QT." ProductN: ".$this->name."\n";
     
      
 

@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-class User extends TestCase{
+class User {
 
     public $username;
     public $email;
@@ -11,11 +11,12 @@ class User extends TestCase{
       //$this->username = 'ken';
       $this->username = $username;
       $this->email = $email;
-    }
+      echo "\n[**] new user has been created";  
+      }
 
     public function addFriend(){
       
-      return "\n[**]$this->username just added a new friend\n";
+      return "\n[**] $this->username just added a new friend\n";
     }
 
     public function getUname(){
@@ -27,23 +28,17 @@ class User extends TestCase{
       
       return $this->email;
     }
-    public function testName()
-    {
-        $this->assertSame('Oussez', $this->username);
-    }
+    // public function testName()
+    // {
+    //     $this->assertSame('Oussez', $this->username);
+    // }
 
-    public function testMail()
-    {
-        $this->assertSame('Oussez@gmail.com', $this->email);
-    }
+    // public function testMail()
+    // {
+    //     $this->assertSame('Oussez@gmail.com', $this->email);
+    // }
 
   }
 
-  $userOne = new User('Oussez', 'Oussez@gmail.com');
-
-  echo $userOne->addFriend();
-  
-  if($userOne->testMail() || $userOne->testUname())
-    {echo "[***] Username & Email are correctly matched";}
-  //$this->assertSame('Oussez@gmail.com',$userOne->getMail());
+ 
 ?>
